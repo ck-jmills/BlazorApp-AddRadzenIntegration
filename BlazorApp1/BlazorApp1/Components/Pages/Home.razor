@@ -4,4 +4,33 @@
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<p>Welcome to your new app.</p>
+
+@if(Selected is not null)
+{
+        <p>Selected: @Selected</p>
+}
+
+<RadzenPanelMenu>
+    <RadzenPanelMenuItem Text="Top Level 1">
+        <RadzenPanelMenuItem Text="L1. Submenu 1" Path="/?selected=L1.S1" />
+        <RadzenPanelMenuItem Text="L1. Submenu 2" Path="/?selected=L1.S2" />
+        <RadzenPanelMenuItem Text="L1. Submenu 3" Path="/?selected=L1.S3" />
+    </RadzenPanelMenuItem>
+    <RadzenPanelMenuItem Text="Top Level 2" Path="">
+        <RadzenPanelMenuItem Text="L2. Submenu 1" Path="/?selected=L2.S1" />
+        <RadzenPanelMenuItem Text="L2. Submenu 2" Path="/?selected=L2.S2" />
+        <RadzenPanelMenuItem Text="L2. Submenu 3" Path="/?selected=L2.S3" />
+    </RadzenPanelMenuItem>
+    <RadzenPanelMenuItem Text="Top Level 3" Path="">
+        <RadzenPanelMenuItem Text="L3. Submenu 1" Path="/?selected=L3.S1" />
+        <RadzenPanelMenuItem Text="L3. Submenu 2" Path="/?selected=L3.S2" />
+        <RadzenPanelMenuItem Text="L3. Submenu 3" Path="/?selected=L3.S3" />
+    </RadzenPanelMenuItem>
+</RadzenPanelMenu>
+
+ @code
+ {
+    [SupplyParameterFromQuery]
+    public string? Selected { get; set; }
+}

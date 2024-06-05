@@ -1,5 +1,6 @@
 using BlazorApp1.Client.Pages;
 using BlazorApp1.Components;
+using Radzen;
 
 namespace BlazorApp1
 {
@@ -13,6 +14,7 @@ namespace BlazorApp1
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents()
                 .AddInteractiveWebAssemblyComponents();
+            builder.Services.AddRadzenComponents();
 
             var app = builder.Build();
 
